@@ -1,6 +1,7 @@
 ﻿package 
 {
 	import flash.display.DisplayObject;
+	import systems.GravitySystem;
 	import systems.RenderSystem;
 	import systems.MovementSystem;
 	import flash.events.Event;
@@ -23,6 +24,7 @@
 			// vervolgens initieren wij de systemen
 			// dit doen we door ze toe te voegen aan de engine
 			_engine.addSystem(new MovementSystem());
+			_engine.addSystem(new GravitySystem());
 			_engine.addSystem(new RenderSystem());			
 			
 			
@@ -34,16 +36,18 @@
 			// registreer de auto bij de engine
 			_engine.addEntity(car);
 			_engine.addEntity(truck);
+			_engine.addEntity(missle);
 			
 			// laat de auto ook visueel zien
 			// we voegen hem toe aan de stage
 			addChild(car.display.view);
 			addChild(truck.display.view);
+			addChild(missle.display.view);
 			
 			// start het updaten van het spel
 			stage.addEventListener(Event.ENTER_FRAME, updateEngine);
 		}
-		private function makeMissle(viuw :DisplayObject, x :Number)
+		private function makeMissle(view :DisplayObject, x :Number)
 		{
 			var display	:	DisplayComponent		=	new DisplayComponent();
 			display.view							=	view;
