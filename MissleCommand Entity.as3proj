@@ -52,6 +52,7 @@
   <libraryPaths>
     <element path="lib\library.swc" />
     <element path="lib\Library1.swc" />
+    <element path="lib\landscape.swc" />
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>

@@ -1,6 +1,8 @@
 package {
 	import systems.System;
-
+	/**
+	 * @author berendweij
+	 */
 	public class Engine {
 		
 		// lijst met alle entities in deze game
